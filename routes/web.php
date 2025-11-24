@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PracticeController;
 
 Route::get('/', [ProductController::class, 'home'])->name('home');
 
@@ -20,3 +21,9 @@ require __DIR__.'/auth.php';
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+
+// Route::get('user', [PracticeController::class, 'Demo']);
+// // Route::get('user', [PracticeController::class, 'aboutUser']);
+// Route::get('user/{name}', [PracticeController::class, 'getUserName']);
+
+// Route::get('admin', [PracticeController::class, 'adminLogin']);

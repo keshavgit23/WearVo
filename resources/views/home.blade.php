@@ -1,40 +1,50 @@
-<x-app-layout>
-    <div class="max-w-7xl mx-auto p-6">
+@include('navbar')
 
-        <!-- Banner -->
-        <div class="bg-blue-600 text-white p-6 rounded-lg mb-8">
-            <h1 class="text-3xl font-bold">Welcome to My Store</h1>
-            <p class="mt-2">Shop the latest products at best prices!</p>
-        </div>
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title> Hero Section</title>
+    <style>
+        .hero{
+            width: 100%;
+            text-align: center;
+            height: 500px;
+            background-image: url('/images/hero1.jpg');
+            background-size: cover;
+            background-position: center;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 50px;
+            color: black;
+        }
+        .hero h1{
+            font-size: 50px;
+            margin: 0;
+        }
+        .hero p{
+            font-size: 20px;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+        .hero button{
+            margin-top: 20px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            background: yellow;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 170px;
+        }
 
-        <!-- Product List -->
-        <h2 class="text-2xl font-semibold mb-4">Latest Products</h2>
-
-        @if($products->count() > 0)
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                @foreach($products as $product)
-                    <div class="p-4 border rounded-lg shadow">
-                        <!-- IMAGE -->
-                        <img src="{{ asset('storage/' . $product->image) }}"
-                             class="w-full h-48 object-cover mb-3 rounded">
-
-                        <!-- NAME -->
-                        <h3 class="text-lg font-bold">{{ $product->name }}</h3>
-
-                        <!-- PRICE -->
-                        <p class="text-gray-600 mb-2">₹{{ $product->price }}</p>
-
-                        <!-- BUTTON -->
-                        <a href="/products/{{ $product->slug }}"
-                           class="text-blue-600 font-semibold">
-                           View Product →
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-        @else
-            <p>No products added yet.</p>
-        @endif
-
+        </style>
+</head>
+ <body>
+    <div class="hero">
+    <h1> Welcome to WearVo </h1>
+    <p> Discover the latest trends here! </p>
+    <button> Shop Now </button>
     </div>
-</x-app-layout>
+</body>
+</html>
